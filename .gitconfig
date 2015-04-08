@@ -1,6 +1,6 @@
 [user]
-	name = Chris Hunter
-	email = chunter@denormal.org
+    name = Chris Hunter
+    email = chunter@denormal.org
 [color]
     diff = auto
     status = auto
