@@ -1,5 +1,6 @@
 alias ls='ls --color=auto --group-directories-first'
-alias grep='grep --color=auto'
 alias l='ls -la'
-alias tidyxml='tidy -utf8 -xml -i --indent-spaces 4 -w 255 -q -m'
+alias grep='grep --color=auto'
+alias env='env | sort'
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
+alias tidyxml='tidy -utf8 -xml -i --indent-spaces 4 -w 255 -q -m'
