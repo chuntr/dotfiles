@@ -14,3 +14,13 @@
     untracked = magenta bold
 [color "branch"]
     remote = yellow
+[credential]
+    helper = cache --timeout=86400
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+[core]
+    whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
+    pager = less -x1,5
