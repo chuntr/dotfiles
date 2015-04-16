@@ -31,6 +31,9 @@ if [ "$color_prompt" = yes ]; then
     elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
         # yellow prompt for semi-important hosts
         PS1="\e[0;33m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+    elif [[ $HOSTNAME =~ chunter-desktop ]]; then
+        # teal prompt for workstation
+        PS1="\e[0;36m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
     else
         # green prompt
         PS1="\e[0;32m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
