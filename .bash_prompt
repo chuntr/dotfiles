@@ -18,10 +18,25 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-# for better prompt
+# for better prompt (BFG Specific)
+export DOTDOMAINNAME=${HOSTNAME/#${HOSTNAME%.*.*}/}
+HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
+PSTAIL=":\w\n[\t] \$ "
 if [ "$color_prompt" = yes ]; then
-    PS1="\e[0;36m\u@${HOSTNAME/${DOTDOMAINNAME}/}\e[0;37m:\w\n[\t] \$ "
+    # default to teal prompt
+    PS1="\e[0;36m\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w\n[\t] \$ "
+    if [[ $HOSTNAME =~ \.(sea|ash) ]]; then
+        # red prompt for important hosts
+        PS1="\e[0;31m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+    elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
+        # yellow prompt for semi-important hosts
+        PS1="\e[0;33m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+    else
+        # green prompt
+        PS1="\e[0;32m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+    fi
 else
-   	PS1="\u@${HOSTNAME/${DOTDOMAINNAME}/}:\w\n[\t] \$ "
+    PS1='\u@${HOSTSTRING}${PSTAIL}'
 fi
+
 unset color_prompt force_color_prompt
