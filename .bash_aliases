@@ -6,7 +6,7 @@ alias l='ls -la'
 alias grep='grep --color=auto'
 alias env='env | sort'
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
-alias svnmerge='svnmerge.py'
+alias python='python -tt'
 alias tidyxml='tidy -utf8 -xml -i --indent-spaces 4 -w 255 -q -m'
 alias tools='cd /svn/it/scripts/exports/trunk'
 alias work='cd /usr/local/release'
@@ -20,3 +20,8 @@ elif [[ $HOSTNAME =~ \.(sea|ash) ]]; then
     alias manifest='cd /usr/local/release/svn/configs/manifest/dgb/prod; svn up'
     alias vhost='cd /usr/local/release/svn/configs/vhosts/branches/releases/prod_release; svn up'
 fi
+
+function xq {
+    xpath -e "//name[text()=\"${3}\"]/..//*" /etc/bfg/envs/${1}/${2}/config.xml 2>/dev/null
+}
+
