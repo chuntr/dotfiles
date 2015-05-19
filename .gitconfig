@@ -1,6 +1,6 @@
 [user]
-    name = Chris Hunter
-    email = chunter@denormal.org
+	name = Christopher Hunter
+	email = christopher.hunter@bigfishgames.com
 [color]
     diff = auto
     status = auto
@@ -14,3 +14,6 @@
     untracked = magenta bold
 [color "branch"]
     remote = yellow
+[core]
+	editor = vim
+	ignorecase = false
