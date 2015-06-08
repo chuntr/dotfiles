@@ -4,6 +4,7 @@ alias d-trunk='cd /svn/it/scripts/exports/trunk && svn update'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls -la'
 alias grep='grep --color=auto'
+alias jgrep="grep java | sed -e 's| \-|\n\-|g' "
 alias env='env | sort'
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 alias python='python -tt'
