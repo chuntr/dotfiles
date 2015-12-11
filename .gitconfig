@@ -17,3 +17,5 @@
 [core]
 	editor = vim
 	ignorecase = false
+[push]
+	default = simple
