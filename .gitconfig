@@ -24,3 +24,7 @@
 [core]
     whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
     pager = less -x1,5
+[push]
+	default = matching
+[http]
+	sslverify = false

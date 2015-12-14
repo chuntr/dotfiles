@@ -4,6 +4,7 @@ function svn() {
     local SVN="`which svn`"
     # set neon-debug-mask (0 for none)
     local NDB="--config-option servers:global:neon-debug-mask=256"
+    local NDB=''
     local operation=$1
     shift
     
