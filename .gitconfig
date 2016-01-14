@@ -1,6 +1,7 @@
 [user]
     name = Chris Hunter
     email = christopher.hunter@bigfishgames.com
+	signingkey = 5814FC60
 [color]
     diff = auto
     status = auto
