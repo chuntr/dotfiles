@@ -1,0 +1,64 @@
+@syntax-var-tag-open-color: #8ABEB7;
+@syntax-var-tag-close-color: #8ABEB7;
+@syntax-variable-other: #F18431;
+@syntax-punctuation-definition-control: #FFB89B;
+@syntax-string-quoted-twig: #E6DB74;
+@syntax-element-twig: #FF2929;
+@syntax-control-twig: #FF6AFF;
+@syntax-keyword-control-twig: #66D9EF;
+
+// highlight variable and function names
+.variable.other.twig,
+.variable.other.property.twig,
+.punctuation.separator.property.twig {
+    color: @syntax-variable-other;
+    font-style: italic;
+}
+.meta.function-call.twig,
+.meta.function-call.object {
+    color: @syntax-variable-other;
+    font-weight: bold;
+}
+
+// quoted string text (monokai-seti default)
+.punctuation.definition.string.begin.twig,
+.punctuation.definition.string.end.twig {
+    color: @syntax-string-quoted-twig;
+    font-style: italic;
+}
+
+// highlight begin/end tags for twig
+.punctuation.section.tag.twig {
+    color: @syntax-var-tag-open-color;
+    font-style: italic;
+}
+.keyword.operator.comparison.twig,
+.keyword.control.twig {
+    color: @syntax-keyword-control-twig;
+    font-style: italic;
+}
+
+// Override some php/html defaults for consistent coloring
+.punctuation.section.embedded.begin.php {
+    color: @syntax-element-twig;
+}
+.punctuation.separator.key-value.html {
+    color: @syntax-keyword-control-twig;
+}
+.punctuation.definition.tag.begin.html,
+.punctuation.definition.tag.end.html {
+    color: @syntax-punctuation-definition-control;
+    font-weight: bolder;
+}
+.entity.name.tag.inline.any.html,
+.entity.name.tag.block.any.html {
+    color: @syntax-element-twig;
+    font-weight: bolder;
+}
+.punctuation.definition.variable.php {
+    color: @syntax-punctuation-definition-control;
+}
+.variable.other.php,
+.storage.php {
+    color: @syntax-variable-other;
+}
