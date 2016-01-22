@@ -2,7 +2,7 @@
 @syntax-variable-other: #4FA4AF;                 // orange
 @syntax-punctuation-definition-control: #66D9EF; // cyan
 @syntax-string-quoted-twig: #4AF3AB;             // pale green
-@syntax-element-twig: #FF2929;                   // red
+@syntax-element-twig: #406BEF;                   // deep blue
 @syntax-control-twig: #E65353;                   // red brown
 @syntax-keyword-control-twig: #66D9EF;           // cyan
 @syntax-function-call-twig: #66D9EF;             // cyan
@@ -10,14 +10,15 @@
 // Twig variable names and function calls
 .variable.other.twig,
 .variable.other.property.twig,
+.meta.function-call.twig,
+.meta.function-call.object.twig,
 .punctuation.separator.property.twig {
     color: @syntax-variable-other;
     font-style: italic;
 }
-.meta.function-call.twig,
-.meta.function-call.object {
-    color: @syntax-function-call-twig;
-    font-weight: bold;
+.meta.function-call.object.php {
+    color: @syntax-variable-other;
+    font-weight: bolder;
 }
 
 // quoted strings
@@ -53,14 +54,15 @@
 .punctuation.section.embedded.begin.php {
     color: @syntax-element-twig;
 }
-.punctuation.separator.key-value.html {
-    color: @syntax-keyword-control-twig;
-}
+// HTML tag borders
+.punctuation.definition.tag.html,
 .punctuation.definition.tag.begin.html,
 .punctuation.definition.tag.end.html {
     color: @syntax-punctuation-definition-control;
     font-weight: bolder;
 }
+// HTML tags
+.entity.name.tag.html,
 .entity.name.tag.inline.any.html,
 .entity.name.tag.block.any.html {
     color: @syntax-element-twig;
@@ -78,4 +80,11 @@
 .variable.other.php,
 .storage.php {
     color: @syntax-variable-other;
+}
+//
+.keyword.operator.key.php,
+.keyword.operator.class.php,
+.keyword.operator.assignment.php,
+.keyword.other.new.php {
+    color: @syntax-control-twig;
 }
