@@ -62,3 +62,8 @@ fi
 if [ -f ~/.svn_functions ]; then
     source $HOME/.svn_functions
 fi
+
+# fancy log parse aliases
+if [ -f ~/.log_parse_functions ]; then
+    source $HOME/.log_parse_functions
+fi
