@@ -1,10 +1,15 @@
-set nu
-syntax on
-set tabstop=4
-set shiftwidth=4
-set expandtab
 set autoindent
+set expandtab
+set hlsearch
+set nu
+set paste
+set shiftwidth=4
+set tabstop=4
+syntax on
 
 if has("mouse")
 	set mouse=a
 endif
+
+" strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
