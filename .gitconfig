@@ -1,7 +1,7 @@
 [user]
     name = Chris Hunter
     email = christopher.hunter@bigfishgames.com
-	signingkey = 5814FC60
+    signingkey = 5814FC60
 [color]
     diff = auto
     status = auto
@@ -28,6 +28,6 @@
     whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
     pager = less -x1,5
 [push]
-	default = matching
+    default = matching
 [http]
-	sslverify = false
+    sslverify = false
