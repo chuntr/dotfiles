@@ -17,25 +17,38 @@ fi
 # for better prompt (BFG Specific)
 export DOTDOMAINNAME=${HOSTNAME/#${HOSTNAME%.*.*}/}
 HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
-PSTAIL=":\w\n[\t] \$ "
 if [ "$color_prompt" = yes ]; then
     # default to teal prompt
-    PS1="\e[0;36m\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w\n[\t] \$ "
+    PSHEAD="\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w"
+    PSCOLOR="\e[0;36m"
     if [[ $HOSTNAME =~ \.(sea|ash) ]]; then
         # red prompt for important hosts
-        PS1="\e[0;31m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+        PSHEAD="\e[0;31m${PSHEAD}"
     elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
         # yellow prompt for semi-important hosts
-        PS1="\e[0;33m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+        PSHEAD="\e[0;33m${PSHEAD}"
     elif [[ $HOSTNAME =~ chunter-desktop ]]; then
         # teal prompt for workstation
-        PS1="\e[0;36m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+        PSHEAD="\e[0;36m${PSHEAD}"
     else
         # green prompt
-        PS1="\e[0;32m\u@${HOSTSTRING}\e[0;37m${PSTAIL}"
+        PSHEAD="\e[0;32m${PSHEAD}"
     fi
 else
-    PS1='\u@${HOSTSTRING}${PSTAIL}'
+    PSHEAD='\u@${HOSTSTRING}'
+fi
+
+# Prompt info that should come after the git information
+PSTAIL="\n[\t] \$ "
+
+# add git prompt settings if available
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
+    GIT_PROMPT_START=$PSHEAD
+    GIT_PROMPT_END=$PSTAIL
+    GIT_PROMPT_ONLY_IN_REPO=1
+else
+    PS1=${PSHEAD}${PSTAIL}
 fi
 
 unset color_prompt force_color_prompt
