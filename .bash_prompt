@@ -14,30 +14,34 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-# for better prompt (BFG Specific)
+
+# Display host.env if possible for the hostnamen - BFG Specific
 export DOTDOMAINNAME=${HOSTNAME/#${HOSTNAME%.*.*}/}
 HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
+
+# colorize hostname strings based on environment
 if [ "$color_prompt" = yes ]; then
-    # default to teal prompt
-    PSHEAD="\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w"
+    # default to teal
     PSCOLOR="\e[0;36m"
     if [[ $HOSTNAME =~ \.(sea|ash) ]]; then
         # red prompt for important hosts
-        PSHEAD="\e[0;31m${PSHEAD}"
+        PSCOLOR="\e[0;31m"
     elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
         # yellow prompt for semi-important hosts
-        PSHEAD="\e[0;33m${PSHEAD}"
+        PSCOLOR="\e[0;33m"
     elif [[ $HOSTNAME =~ chunter-desktop ]]; then
         # teal prompt for workstation
-        PSHEAD="\e[0;36m${PSHEAD}"
+        PSCOLOR="\e[0;36m"
     else
-        # green prompt
-        PSHEAD="\e[0;32m${PSHEAD}"
+        # green prompt for lower environments
+        PSCOLOR="\e[0;32m"
     fi
 else
-    PSHEAD='\u@${HOSTSTRING}'
+    PSCOLOR=''
 fi
 
+# add decorators to hosstring
+PSHEAD="${PSCOLOR}\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w"
 # Prompt info that should come after the git information
 PSTAIL="\n[\t] \$ "
 
