@@ -1,6 +1,7 @@
 [user]
     name = Chris Hunter
     email = chunter@gmail.com
+    signingkey = 5814FC60
 [color]
     diff = auto
     status = auto
@@ -26,3 +27,5 @@
     pager = less -x1,5
 [push]
     default = matching
+[http]
+    sslverify = false
