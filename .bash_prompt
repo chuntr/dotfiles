@@ -21,6 +21,8 @@ HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
 
 # colorize hostname strings based on environment
 if [ "$color_prompt" = yes ]; then
+    # default to teal
+    PSCOLOR="\e[0;36m"
     if [[ $HOSTNAME =~ \.(sea|ash) ]]; then
         # red prompt for important hosts
         PSCOLOR="\e[0;31m"
@@ -28,7 +30,7 @@ if [ "$color_prompt" = yes ]; then
         # yellow prompt for semi-important hosts
         PSCOLOR="\e[0;33m"
     elif [[ $HOSTNAME =~ chunter-desktop ]]; then
-        # teal prompt for my workstation
+        # teal prompt for workstation
         PSCOLOR="\e[0;36m"
     else
         # green prompt for lower environments
@@ -43,14 +45,14 @@ PSHEAD="${PSCOLOR}\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w"
 # Prompt info that should come after the git information
 PSTAIL="\n[\t] \$ "
 
+PS1=${PSHEAD}${PSTAIL}
+
 # add git prompt settings if available
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     source ~/.bash-git-prompt/gitprompt.sh
     GIT_PROMPT_START=$PSHEAD
     GIT_PROMPT_END=$PSTAIL
     GIT_PROMPT_ONLY_IN_REPO=1
-else
-    PS1=${PSHEAD}${PSTAIL}
 fi
 
 unset color_prompt force_color_prompt
