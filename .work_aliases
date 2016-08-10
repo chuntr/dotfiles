@@ -2,6 +2,7 @@
 
 # quickchanges
 alias work='cd /usr/local/release'
+alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 
 # release master quickchanges
 if [[ $HOSTNAME =~ \.qast ]]; then

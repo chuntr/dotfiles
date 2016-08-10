@@ -3,8 +3,8 @@ alias ls='ls --color=auto --group-directories-first'
 alias l='ls -la'
 alias grep='grep --color=auto'
 alias env='env | sort'
-alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 alias python='python -tt'
+alias tree='tree -a'
 
 # sort ps output for java processes into something readable
 alias jgrep="grep java | sed -e 's| \-|\n\-|g' "
