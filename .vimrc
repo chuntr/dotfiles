@@ -13,3 +13,6 @@ endif
 
 " strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
+" quicker escape key
+inoremap uh <ESC>
