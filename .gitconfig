@@ -24,10 +24,12 @@
     st = status
     br = branch
     bra = branch -a
+    lol = git log --oneline --graph --decorate --all
 [core]
     whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
     pager = less -x1,5
+    autocrlf = input
 [push]
-    default = matching
+    default = simple
 [http]
     sslverify = false
