@@ -32,6 +32,6 @@
     pager = less -x1,5
     autocrlf = input
 [push]
-    default = simple
+    default = current
 [http]
     sslverify = false
