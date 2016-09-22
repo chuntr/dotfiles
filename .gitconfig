@@ -14,11 +14,7 @@
     untracked = magenta bold
 [color "branch"]
     remote = yellow
-[core]
-	editor = vim
-	ignorecase = false
-[push]
-	default = current
+    default = matching
 [credential]
     helper = cache --timeout=86400
 [alias]
@@ -32,10 +28,13 @@
     re = remote -v
     diffs = diff --staged
 [core]
+	editor = vim
+	ignorecase = false
     whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
     pager = less -x1,5
+    autocrlf = input
 [push]
-    default = matching
+    default = current
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
