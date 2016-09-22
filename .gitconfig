@@ -18,7 +18,7 @@
 	editor = vim
 	ignorecase = false
 [push]
-	default = simple
+	default = current
 [credential]
     helper = cache --timeout=86400
 [alias]
