@@ -1,6 +1,6 @@
 [user]
     name = Chris Hunter
-    email = chunter@denormal.org
+    email = chunter@gmail.com
 [color]
     diff = auto
     status = auto
@@ -14,3 +14,17 @@
     untracked = magenta bold
 [color "branch"]
     remote = yellow
+[alias]
+    ad = add -A
+    br = branch
+    bra = branch -a
+    ci = commit
+    co = checkout
+    diffs = diff --staged
+    re = remote -v
+    st = status
+[core]
+    whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
+    pager = less -x1,5
+[push]
+    default = matching
