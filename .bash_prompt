@@ -14,10 +14,28 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-# for better prompt
+
+# colorize hostname strings based on environment
 if [ "$color_prompt" = yes ]; then
-    PS1="\e[0;36m\u@${HOSTNAME/${DOTDOMAINNAME}/}\e[0;37m:\w\n[\t] \$ "
+    # default to teal
+    PSCOLOR="\e[0;36m"
 else
-   	PS1="\u@${HOSTNAME/${DOTDOMAINNAME}/}:\w\n[\t] \$ "
+    PSCOLOR=''
 fi
+
+# add decorators to hosstring
+PSHEAD="${PSCOLOR}\u@${HOSTNAME}\e[0;37m:\w"
+# Prompt info that should come after the git information
+PSTAIL="\n[\t] \$ "
+
+PS1=${PSHEAD}${PSTAIL}
+
+# add git prompt settings if available - https://github.com/magicmonty/bash-git-prompt
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
+    GIT_PROMPT_START=$PSHEAD
+    GIT_PROMPT_END=$PSTAIL
+    GIT_PROMPT_ONLY_IN_REPO=1
+fi
+
 unset color_prompt force_color_prompt
