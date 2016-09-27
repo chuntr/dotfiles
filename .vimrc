@@ -8,7 +8,7 @@ set tabstop=4
 syntax on
 
 if has("mouse")
-	set mouse=a
+    set mouse=a
 endif
 
 " strip trailing whitespace on save
