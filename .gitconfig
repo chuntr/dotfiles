@@ -19,14 +19,15 @@
     helper = cache --timeout=86400
 [alias]
     ad = add -A
-    co = checkout
-    ci = commit
-    st = status
     br = branch
     bra = branch -a
+    ci = commit
+    co = checkout
+    diffs = diff --staged
     lol = log --oneline --graph --decorate --all
     re = remote -v
-    diffs = diff --staged
+    re = remote -v
+    st = status
 [core]
     editor = vim
     ignorecase = false
