@@ -5,6 +5,4 @@
 # 2. remove shell history
 if [ "$GAME_OVER_MAN" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
-    [ -x $HOME/.bash_history ] && rm -f $HOME/.bash_history
-    [ -x $HOME/.history ] && rm -f $HOME/.history
 fi
