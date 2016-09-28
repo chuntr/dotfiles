@@ -54,8 +54,8 @@ if [ -f ~/.bash_prompt ]; then
 fi
 
 # custom aliases
-if [ -f ~/.bash_aliases ]; then
-    source $HOME/.bash_aliases
+if [ -f ~/.aliases ]; then
+    source $HOME/.aliases
 fi
 
 # fancy svn output
