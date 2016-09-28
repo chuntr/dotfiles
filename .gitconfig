@@ -1,5 +1,5 @@
 [user]
-    name = Chris Hunter
+    name = Christopher Hunter
     email = chunter@gmail.com
 [color]
     diff = auto
@@ -14,6 +14,9 @@
     untracked = magenta bold
 [color "branch"]
     remote = yellow
+    default = matching
+[credential]
+    helper = cache --timeout=86400
 [alias]
     ad = add -A
     br = branch
@@ -21,10 +24,18 @@
     ci = commit
     co = checkout
     diffs = diff --staged
+    lol = log --oneline --graph --decorate --all
     re = remote -v
     st = status
 [core]
+    editor = vim
+    ignorecase = false
     whitespace = tab-in-indent,cr-at-eol,trailing-space,tabwidth=4
     pager = less -x1,5
+    autocrlf = input
 [push]
     default = matching
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
