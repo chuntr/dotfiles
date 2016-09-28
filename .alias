@@ -1,6 +1,5 @@
 # things i just can't deal without:
-alias ls='ls --color=auto --group-directories-first'
-alias l='ls -la'
+alias l='ls -laG'
 alias grep='grep --color=auto'
 alias env='env | sort'
 
