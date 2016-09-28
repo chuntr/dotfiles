@@ -34,7 +34,7 @@
     pager = less -x1,5
     autocrlf = input
 [push]
-    default = current
+    default = matching
 [filter "lfs"]
     clean = git-lfs clean %f
     smudge = git-lfs smudge %f
