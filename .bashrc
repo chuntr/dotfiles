@@ -27,6 +27,12 @@ if [ -f "/usr/share/source-highlight/src-hilite-lesspipe.sh" ]; then
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 fi
 
+# OS X 10.8 and newer come with php-fpm pre-installed,
+# to ensure you are using the brew version you need to make
+# sure /usr/local/sbin is before /usr/sbin in your PATH:
+
+PATH="/usr/local/sbin:$PATH"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH:/usr/local/bin"
