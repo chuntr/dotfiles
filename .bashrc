@@ -33,9 +33,14 @@ fi
 
 PATH="/usr/local/sbin:$PATH"
 
+# we also want our (brew) versions of php, etc
+if [ -d "/usr/local/bin" ] ; then
+    PATH="/usr/local/bin:$PATH"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH:/usr/local/bin"
+    PATH="$HOME/bin:$PATH"
 fi
 
 # BFG specific path
