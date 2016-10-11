@@ -29,12 +29,12 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$HOME/bin:$PATH:/usr/local/bin"
 fi
 
 # BFG specific path
 if [ -d "/usr/local/release" ] ; then
-    PATH="$PATH:/usr/local/release"
+    PATH="$PATH:/usr/local/release:"
 fi
 
 # BFG specific envs
