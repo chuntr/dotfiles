@@ -27,6 +27,9 @@ if [ -f "/usr/share/source-highlight/src-hilite-lesspipe.sh" ]; then
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 fi
 
+# OS X - better ls colors
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
 # OS X 10.8 and newer come with php-fpm pre-installed,
 # to ensure you are using the brew version you need to make
 # sure /usr/local/sbin is before /usr/sbin in your PATH:
