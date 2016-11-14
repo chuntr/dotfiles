@@ -43,4 +43,4 @@
 [http]
     sslverify = false
 [branch]
-	autosetupmerge = always
+    autosetupmerge = always
