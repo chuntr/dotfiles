@@ -23,7 +23,7 @@
 [alias]
     ad = add -A
     br = branch
-    bra = branch -a
+    bra = branch -avv
     ci = commit
     co = checkout
     diffs = diff --staged
@@ -42,3 +42,5 @@
     default = matching
 [http]
     sslverify = false
+[branch]
+	autosetupmerge = always

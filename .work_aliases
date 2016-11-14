@@ -4,6 +4,9 @@
 alias work='cd /usr/local/release'
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 
+# ldap lookups
+alias ldapgroup='python /git/corp/ops/bfgpylib/BFGLdap/test_getUserGroupList.py'
+
 # release master quickchanges
 if [[ $HOSTNAME =~ \.qast ]]; then
     alias externals='cd /usr/local/release/svn/configs/externals/trunk; svn up'
