@@ -44,3 +44,5 @@
     sslverify = false
 [branch]
     autosetupmerge = always
+[color "diff"]
+    old = red strike
