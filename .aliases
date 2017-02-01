@@ -8,7 +8,7 @@ alias tree='tree -a'
 alias ssh='ssh -A'
 
 # sort ps output for java processes into something readable
-alias jgrep="grep java | sed -e 's| \-|\n\-|g' "
+alias jgrep="grep java | sed -e 's| \-|\n  \-|g' "
 
 # better/faster svn diff (doesn't show all the bs, good for verifying multiple one-line changes):
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
