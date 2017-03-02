@@ -22,3 +22,6 @@ fi
 function xq {
     xpath -e "//name[text()=\"${3}\"]/..//*" /etc/bfg/envs/${1}/${2}/config.xml 2>/dev/null
 }
+
+# perforce
+alias p4='p4 -u chunter -p perforce.bigfish.lan:6789'

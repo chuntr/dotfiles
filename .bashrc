@@ -72,6 +72,11 @@ if [ -f ~/.aliases ]; then
     source $HOME/.aliases
 fi
 
+# custom aliases
+if [ -f ~/.work_aliases ]; then
+    source $HOME/.work_aliases
+fi
+
 # fancy svn output
 if [ -f ~/.svn_functions ]; then
     source $HOME/.svn_functions

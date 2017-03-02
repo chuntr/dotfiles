@@ -1,14 +1,21 @@
 # things i just can't deal without:
 alias ls='ls -FG'
 alias l='ls -la'
+alias l.='ls -lad .*'
 alias grep='grep --color=auto'
 alias env='env | sort'
 alias python='python -tt'
 alias tree='tree -a'
 alias ssh='ssh -A'
 
-# sort ps output for java processes into something readable
-alias jgrep="grep java | sed -e 's| \-|\n\-|g' "
+# sort ps output into readable format
+alias jps="ps aux | grep java     | sed -e 's/ \-/\n  \-/g' "
+# sort chrome ps output into readable format
+alias chrps="ps aux | grep chrome \
+    | sed -e 's/ \-/\n  \-/g' \
+    | sed -re \"s/(\,)/\,\n      /g\" \
+    | sed -re \"s#/\*#/\\n      \*#g\" \
+    | sed -e '/^$/d' "
 
 # better/faster svn diff (doesn't show all the bs, good for verifying multiple one-line changes):
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
