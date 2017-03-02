@@ -23,13 +23,13 @@
 [alias]
     ad = add -A
     br = branch
-    bra = branch -avv
+    bre = branch -avv
     ci = commit
     co = checkout
     diffs = diff --staged
     lol = log --oneline --graph --decorate --all
-    last = log --pretty=format:%h%n -1
-    long = log --pretty=format:%H%n -1
+    slast = log --pretty=format:%h%n -1
+    llast = log --pretty=format:%H%n -1
     re = remote -v
     st = status
 [core]
