@@ -45,4 +45,4 @@
 [branch]
     autosetupmerge = always
 [color "diff"]
-    old = red strike
+    old = red
