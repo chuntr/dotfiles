@@ -57,6 +57,11 @@ if [ -f ~/.svn_functions ]; then
     source $HOME/.svn_functions
 fi
 
+# git auto-completion
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash ]
+fi
+
 # fancy log parse aliases
 if [ -f ~/.log_parse_functions ]; then
     source $HOME/.log_parse_functions
