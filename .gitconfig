@@ -39,7 +39,7 @@
     pager = cat
     autocrlf = input
 [push]
-    default = matching
+    default = current
 [http]
     sslverify = false
 [branch]
