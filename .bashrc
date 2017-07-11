@@ -26,15 +26,6 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# BFG specific path
-if [ -d "/usr/local/release" ] ; then
-    PATH="$PATH:/usr/local/release"
-fi
-
-# BFG specific envs
-export LOGLEVEL=DEBUG
-export SVN_HOME=/svn/it
-
 # regular-old envs
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
@@ -59,7 +50,7 @@ fi
 
 # git auto-completion
 if [ -f ~/.git-completion.bash ]; then
-    source ~/.git-completion.bash ]
+    source ~/.git-completion.bash
 fi
 
 # fancy log parse aliases
