@@ -22,3 +22,7 @@ alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 
 # quick tidy for xml
 alias tidyxml='tidy -utf8 -xml -i --indent-spaces 4 -w 255 -q -m'
+
+# use vim as a less pager
+VIMVER=$( vim --version | grep IMproved | cut -c 19-21 | sed -e 's/\.//' )
+alias vless="vim -u /usr/share/vim/vim${VIMVER}/macros/less.vim"
