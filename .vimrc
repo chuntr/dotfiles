@@ -3,6 +3,7 @@ set autoindent
 set hlsearch
 " show visible line numbers - relative
 set rnu
+set nu
 set paste
 " set tabs to 4 spaces always and forever
 set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
@@ -22,3 +23,6 @@ inoremap uh <ESC>
 
 " set color
 color delek
+
+" show 80 column char barrier (requires vim version >= 7.3)
+set colorcolumn=80
