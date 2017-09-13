@@ -28,7 +28,7 @@ if [ "$color_prompt" = yes ]; then
         PSCOLOR="\e[0;36m"
     elif [[ $HOSTNAME =~ chunter-laptop ]]; then
         # green prompt for mack workstation
-        PSCOLOR="\e[0;32m"
+        PSCOLOR="\e[0;92m"
     elif [[ $HOSTNAME =~ \.(sea|ash|corp) ]]; then
         # red prompt for important hosts
         PSCOLOR="\e[0;31m"
