@@ -30,8 +30,11 @@ if [ "$color_prompt" = yes ]; then
         # yellow prompt for semi-important hosts
         PSCOLOR="\e[0;33m"
     elif [[ $HOSTNAME =~ chunter-desktop ]]; then
-        # teal prompt for workstation
+        # teal prompt for linux workstation
         PSCOLOR="\e[0;36m"
+    elif [[ $HOSTNAME =~ chunter-laptop ]]; then
+        # green prompt for mack workstation
+        PSCOLOR="\e[0;32m"
     else
         # green prompt for lower environments
         PSCOLOR="\e[0;32m"
