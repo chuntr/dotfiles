@@ -15,7 +15,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Display host.env if possible for the hostnamen - BFG Specific
+# Display host.env if possible for the hostname - BFG Specific
 export DOTDOMAINNAME=${HOSTNAME/#${HOSTNAME%.*.*}/}
 HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
 
@@ -23,7 +23,7 @@ HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
 if [ "$color_prompt" = yes ]; then
     # default to teal
     PSCOLOR="\e[0;36m"
-    if [[ $HOSTNAME =~ \.(sea|ash) ]]; then
+    if [[ $HOSTNAME =~ \.(sea|ash|corp) ]]; then
         # red prompt for important hosts
         PSCOLOR="\e[0;31m"
     elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
@@ -40,7 +40,7 @@ else
     PSCOLOR=''
 fi
 
-# add decorators to hosstring
+# add decorators to hoststring (prompt settings before git info)
 PSHEAD="${PSCOLOR}\u@${HOSTSTRING/${DOTDOMAINNAME}/}\e[0;37m:\w"
 # Prompt info that should come after the git information
 PSTAIL="\n[\t] \$ "
