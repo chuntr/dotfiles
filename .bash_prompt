@@ -23,18 +23,18 @@ HOSTSTRING=${HOSTNAME/${DOTDOMAINNAME}/}
 if [ "$color_prompt" = yes ]; then
     # default to teal
     PSCOLOR="\e[0;36m"
-    if [[ $HOSTNAME =~ \.(sea|ash|corp) ]]; then
-        # red prompt for important hosts
-        PSCOLOR="\e[0;31m"
-    elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
-        # yellow prompt for semi-important hosts
-        PSCOLOR="\e[0;33m"
-    elif [[ $HOSTNAME =~ chunter-desktop ]]; then
+    if [[ $HOSTNAME =~ chunter-desktop ]]; then
         # teal prompt for linux workstation
         PSCOLOR="\e[0;36m"
     elif [[ $HOSTNAME =~ chunter-laptop ]]; then
         # green prompt for mack workstation
         PSCOLOR="\e[0;32m"
+    elif [[ $HOSTNAME =~ \.(sea|ash|corp) ]]; then
+        # red prompt for important hosts
+        PSCOLOR="\e[0;31m"
+    elif [[ $HOSTNAME =~ svn\.dev|\.(st|qast) ]]; then
+        # yellow prompt for semi-important hosts
+        PSCOLOR="\e[0;33m"
     else
         # green prompt for lower environments
         PSCOLOR="\e[0;32m"
