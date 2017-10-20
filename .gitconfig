@@ -32,6 +32,7 @@
     llast = log --pretty=format:%H%n -1
     re = remote -v
     st = status
+	lsum = log --pretty=tformat:'%C(green)%h%Creset %ai %C(yellow)%<(20)%an%Creset %s'
 [core]
     editor = vim
     ignorecase = false
