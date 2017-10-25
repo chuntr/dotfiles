@@ -13,9 +13,9 @@ alias ssh='ssh -A'
 alias jps="ps -fC java | sed -e 's/ \-/\n  \-/g' "
 # sort chrome ps output into readable format
 alias chrps="ps aux | grep chrome \
-    | sed -e 's/ \-/\n  \-/g' \
-    | sed -re \"s/(\,)/\,\n      /g\" \
+    | sed -e 's/ \-/\n    \-/g' \
     | sed -re \"s#/\*#/\\n      \*#g\" \
+    | sed -e '/    --content-image-texture-target.*/d '\
     | sed -e '/^$/d' "
 
 # better/faster svn diff (doesn't show all the bs, good for verifying multiple one-line changes):
