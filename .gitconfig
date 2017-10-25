@@ -30,7 +30,7 @@
     lol = log --oneline --graph --decorate --all
     slast = log --pretty=format:%h%n -1
     llast = log --pretty=format:%H%n -1
-	lsum = log --pretty=format:'%C(green)%h%Creset %ai %C(yellow)%<(20)%an%Creset %s'
+    lg = log --graph --pretty=tformat:'%C(green)%h%Creset %ai %C(yellow)%<(20)%an%Creset %s'
     re = remote -v
     st = status
 [core]
