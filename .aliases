@@ -2,6 +2,7 @@
 alias ls='ls -FG'
 alias l='ls -la'
 alias l.='ls -lad .*'
+alias flist="find . -mindepth 1 -maxdepth 1"
 alias grep='grep --color=auto'
 alias env='env | sort'
 alias python='python -tt'
@@ -11,18 +12,20 @@ alias ssh='ssh -A'
 # sort ps output into readable format
 alias jps="ps -fC java | sed -e 's/ \-/\n  \-/g' "
 # sort chrome ps output into readable format
-alias chrps="ps aux | grep chrome \
-    | sed -e 's/ \-/\n  \-/g' \
-    | sed -re \"s/(\,)/\,\n      /g\" \
+alias chrps="ps aux --sort=pcpu | grep chrome \
+    | sed -e 's/ \-/\n    \-/g' \
     | sed -re \"s#/\*#/\\n      \*#g\" \
+    | sed -e '/    --content-image-texture-target.*/d '\
     | sed -e '/^$/d' "
 
-# better/faster svn diff (doesn't show all the bs, good for verifying multiple one-line changes):
+# better/faster svn diff (strips all the non-change info, good for verifying
+# multiple one-line changes):
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 
 # quick tidy for xml
 alias tidyxml='tidy -utf8 -xml -i --indent-spaces 4 -w 255 -q -m'
 
-# use vim as a less pager
+# use vim as a less pager - need to get vim version first for cross-plaftform
+# compatibility
 VIMVER=$( vim --version | grep IMproved | cut -c 19-21 | sed -e 's/\.//' )
 alias vless="vim -u /usr/share/vim/vim${VIMVER}/macros/less.vim"
