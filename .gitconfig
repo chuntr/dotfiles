@@ -21,7 +21,7 @@
     algorithm = patience
     compactionHeuristic = true
 [alias]
-    ad = add -A
+    ad = add -u
     br = branch
     bre = branch -avv
     ci = commit
