@@ -9,7 +9,7 @@
     ~/.dotfiles: ''
     ~/twig-extented.less: twig-extended.less
     ~/.aliases:  .aliases
-    ~/.bash_logout: .bash_lgout
+    ~/.bash_logout: .bash_logout
     ~/.bash_prompt: .bash_prompt
     ~/.bash-git-prompt: .bash-git-prompt
     ~/.bash_profile: .bash_profile
