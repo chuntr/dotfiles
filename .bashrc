@@ -77,3 +77,7 @@ fi
 if [ -f ~/.log_parse_functions ]; then
     source $HOME/.log_parse_functions
 fi
+
+# sbuild settings for creating .deb files
+export DEBFULLNAME="Christopher Hunter"
+export DEBEMAIL="christopher.hunter@bigfishgames.com"
