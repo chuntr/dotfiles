@@ -24,6 +24,7 @@
     ad = add -u
     br = branch
     bre = branch -avv
+    brauth = for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname
     ci = commit
     co = checkout
     diffs = diff --staged
