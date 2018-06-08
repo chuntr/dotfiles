@@ -1,0 +1,39 @@
+#!/bin/bash
+
+set -e
+
+TAG=$1      # git tag string, can be whatever format
+MSG=$2      # quoted string for commit/tag message.
+            # The rt ticket will be prepended with the contents of "/.rt"
+FORCE=$3    # if tag exists, append '--force' as last argument
+
+BRANCH="development"
+TICKET=$( cat ./.rt )
+VERSIONED_FILES_FILE="versioned_files.txt"
+
+# if it does not exist, create a list of files that contain a version string
+if [ -e "${VERSIONED_FILES_FILE}" ]; then
+    echo "using existing ${VERSIONED_FILES_FILE}"
+else
+    grep -H -r '__version__' *.py >> ${VERSIONED_FILES_FILE};
+    grep -H -r 'version' *.json >> ${VERSIONED_FILES_FILE};
+fi
+
+# sed replace the version string in files we want to update
+for file in $( cat ${VERSIONED_FILES_FILE} ); do
+    echo ${file};
+
+    # for python files
+    sed -ri "s/(__version__.*= )('.*')/\1'${TAG}'/" ${file};
+
+    # for json files
+    sed -ri "s/(\"version\" :)(\".*\")/\1'${TAG}'/" ${file};
+    git add ${file}
+done;
+
+
+git status
+git ci -m "${TICKET} ${MSG}"
+git tag ${TAG} -m "${TICKET} ${MSG}"
+git push origin ${BRANCH} ${FORCE}
+git push origin ${TAG} ${FORCE}
