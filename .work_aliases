@@ -47,3 +47,8 @@ function jqq() {
       | jq " ${SVC_QUERY} "
 }
 
+
+function cfdiff() {
+    diff /cfroot/masterfiles.qast/inputs/${1} /cfroot/masterfiles.sea/inputs/${1}
+}
+
