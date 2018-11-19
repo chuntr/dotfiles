@@ -1,7 +1,7 @@
 [user]
     name = Christopher Hunter
     email = christopher.hunter@bigfishgames.com
-    signingkey = 5814FC60
+    signingkey = 19B8AA958D44D0D3
 [color]
     diff = auto
     status = auto
@@ -21,9 +21,10 @@
     algorithm = patience
     compactionHeuristic = true
 [alias]
-    ad = add -A
+    ad = add -u
     br = branch
     bre = branch -avv
+    brauth = for-each-ref --format='%(align:30,left)%(color:bold cyan)%(authorname)%(color:reset)%(end) %(authordate:short)%09%(color:yellow)%(refname:short)%(color:reset)' --sort=authorname
     ci = commit
     co = checkout
     diffs = diff --staged

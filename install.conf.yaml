@@ -1,0 +1,26 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/twig-extented.less: twig-extended.less
+    ~/.aliases:  .aliases
+    ~/.bash_logout: .bash_logout
+    ~/.bash_prompt: .bash_prompt
+    ~/.bash-git-prompt: .bash-git-prompt
+    ~/.bash_profile: .bash_profile
+    ~/.bashrc: .bashrc
+    ~/.git-completion.bash: .git-completion.bash
+    ~/.gitconfig: .gitconfig
+    ~/.gitignore: .gitignore
+    ~/.gitignore_global: .gitignore_global
+    ~/.gitmodules: .gitmodules
+    ~/.log_parse_functions: .log_parse_functions
+    ~/.pylintrc: .pylintrc
+    ~/.svn_functions: .svn_functions
+    ~/.vimrc: .vimrc
+    ~/.work_aliases: .work_aliases

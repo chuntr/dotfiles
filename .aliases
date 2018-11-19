@@ -6,7 +6,7 @@ alias flist="find . -mindepth 1 -maxdepth 1"
 alias grep='grep --color=auto'
 alias env='env | sort'
 alias python='python -tt'
-alias tree='tree -a'
+alias tree='tree -a -I .git'
 alias ssh='ssh -A'
 
 # sort ps output into readable format

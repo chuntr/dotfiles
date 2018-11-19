@@ -3,6 +3,8 @@
 # quickchanges
 alias work='cd /usr/local/release'
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
+alias gexdiff='git diff | grep "^\-\|\+" | grep -v \@\@'
+alias gexdiffs='git diffs | grep "^\-\|\+" | grep -v \@\@'
 
 # ldap lookups
 alias ldapgroup='python /git/corp/ops/bfgpylib/BFGLdap/test_getUserGroupList.py'
@@ -18,10 +20,35 @@ elif [[ $HOSTNAME =~ \.(sea|ash) ]]; then
     alias vhost='cd /usr/local/release/svn/configs/vhosts/branches/releases/prod_release; svn up'
 fi
 
-# fast query DGB config
-function xq {
-    xpath -e "//name[text()=\"${3}\"]/..//*" /etc/bfg/envs/${1}/${2}/config.xml 2>/dev/null
-}
-
 # perforce
 alias p4='p4 -u chunter -p perforce.bigfish.lan:6789'
+
+# fast query function for DGB service data from config.xml files
+function xmlq() {
+    ENV=${1}     # ['dev','int','qa','qa1','qa2','st','ash','prod']
+    SYSTEM=${2}  # ['dgb','f2p']
+    SERVICE=${3} # dgb or f2p service name
+
+    XML=/etc/bfg/envs/${ENV}/${SYSTEM}/config.xml
+    xpath -e "//name[text()=\"${SERVICE}\"]/..//*" ${XML} 2>/dev/null \
+      | tidy -xml -q -i - \
+      | grep -v NODE
+}
+
+# fast query function for pelican service data from config.json files
+function jqq() {
+    ENV=${1}     # ['dev','int','qa','qa1','qa2','qa3','st','ash','prod']
+    SERVICE=${2} # service name
+
+    JSON=/usr/local/games/pelican-configs/envs/${1}/config.json
+    SVC_QUERY=".services[\"${SERVICE}\"]"
+    echo ${SVC_QUERY}
+    cat ${JSON} \
+      | jq " ${SVC_QUERY} "
+}
+
+
+function cfdiff() {
+    diff /cfroot/masterfiles.qast/inputs/${1} /cfroot/masterfiles.sea/inputs/${1}
+}
+
