@@ -21,7 +21,7 @@ elif [[ $HOSTNAME =~ \.(sea|ash) ]]; then
 fi
 
 # perforce
-alias p4='p4 -u chunter -p perforce.bigfish.lan:6789'
+alias p4='p4 -u chunter -p ssl:perforce.corp.bigfishgames.com:1666'
 
 # fast query function for DGB service data from config.xml files
 function xmlq() {
