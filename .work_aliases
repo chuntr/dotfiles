@@ -5,6 +5,7 @@ alias work='cd /usr/local/release'
 alias exdiff='svn diff | grep "^\-\|\+" | grep -v \@\@'
 alias gexdiff='git diff | grep "^\-\|\+" | grep -v \@\@'
 alias gexdiffs='git diffs | grep "^\-\|\+" | grep -v \@\@'
+alias ops01='ssh ops01.sea.bigfishgames.com'
 
 # ldap lookups
 alias ldapgroup='python /git/corp/ops/bfgpylib/BFGLdap/test_getUserGroupList.py'
@@ -21,7 +22,10 @@ elif [[ $HOSTNAME =~ \.(sea|ash) ]]; then
 fi
 
 # perforce
-alias p4='p4 -u chunter -p ssl:perforce.corp.bigfishgames.com:1666'
+alias p4c='p4 -u chunter -p ssl:perforce.corp.bigfishgames.com:1666'
+alias p4corp1='p4 -u chunter -p ssl:perforcesea01.corp.bigfishgames.com:1666'
+alias p4corp2='p4 -u chunter -p ssl:perforcesea02.corp.bigfishgames.com:1666'
+alias p4d='p4 -u chunter -p ssl:perforce01.dev.bigfishgames.com:1666'
 
 # fast query function for DGB service data from config.xml files
 function xmlq() {
