@@ -7,7 +7,6 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/twig-extented.less: twig-extended.less
     ~/.aliases:  .aliases
     ~/.bash_logout: .bash_logout
     ~/.bash_prompt: .bash_prompt
