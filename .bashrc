@@ -14,12 +14,6 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 
 export TERM=xterm-color
-# set terminal type from broken OS X client
-echo $SSH_CLIENT | grep ^172.16.20.222
-if (($? == 0)); then
-    export TERM=linux;
-    echo "Terminal type corrected";
-fi
 
 export EDITOR=`which vim`
 export LESS=' -R '
@@ -46,15 +40,6 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# BFG specific path
-if [ -d "/usr/local/release" ] ; then
-    PATH="$PATH:/usr/local/release:"
-fi
-
-# BFG specific envs
-export LOGLEVEL=DEBUG
-export SVN_HOME=/svn/it
-
 # regular-old envs
 export LANGUAGE="en_US:en"
 export LC_MESSAGES="en_US.UTF-8"
@@ -70,11 +55,6 @@ fi
 # custom aliases
 if [ -f ~/.aliases ]; then
     source $HOME/.aliases
-fi
-
-# custom aliases
-if [ -f ~/.work_aliases ]; then
-    source $HOME/.work_aliases
 fi
 
 # fancy svn output
