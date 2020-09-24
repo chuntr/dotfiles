@@ -28,7 +28,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # to ensure you are using the brew version you need to make
 # sure /usr/local/sbin is before /usr/sbin in your PATH:
 
-PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # we also want our (brew) versions of php, etc
 if [ -d "/usr/local/bin" ] ; then

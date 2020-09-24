@@ -22,6 +22,7 @@
     ~/.pylintrc: .pylintrc
     ~/.svn_functions: .svn_functions
     ~/.vimrc: .vimrc
+    ~/bin: bin
 
 - shell:
     - [git submodule update --init --recursive, Installing Submodules]
